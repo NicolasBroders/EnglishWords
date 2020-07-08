@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="edu.example.broders.englishwords">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/english_words72"
+        android:label="English Words"
+        android:roundIcon="@mipmap/english_words72"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:name=".Home" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".test" android:screenOrientation="portrait"
+            android:label="Paramètres de la partie" />
+        <activity
+            android:name=".Repertoire" android:screenOrientation="portrait"
+            android:label="Répertoire"
+            />
+        <activity
+            android:name=".AjouterUnMot" android:screenOrientation="portrait"
+            android:label="Ajouter un mot" />
+
+        <activity
+            android:name=".AjouterQuizz" android:screenOrientation="portrait"
+            android:label="Ajouter un quizz" />
+        <activity android:name=".Traducteur" android:screenOrientation="portrait"
+            android:label="Traducteur"/>
+        <activity android:name=".ModifierMot" android:screenOrientation="portrait"
+            android:label="Modifier ce mot"/>
+        <activity android:name=".MesQuizz" android:screenOrientation="portrait"
+            android:label="Mes quizz"/>
+        <activity android:name=".ModifierQuizz" android:screenOrientation="portrait"
+            android:label="Modifier ce quizz" ></activity>
+        <activity
+            android:name=".Question" android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true"
+            android:label="@string/title_activity_question"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".EndGame" android:screenOrientation="portrait"
+            android:label="@string/title_activity_end_game"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

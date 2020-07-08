@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#283655"
+    android:weightSum="15">
+
+    <TextView
+        android:id="@+id/themeText"
+        android:layout_width="411dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#283655"
+        android:gravity="center"
+        android:text="Quizz de la partie"
+        android:textAlignment="center"
+        android:textColor="#FFE2E1"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerQuizz"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:entries="@mipmap/english_words72"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/langueText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/themeText"
+        app:layout_constraintVertical_bias="0.138"></Spinner>
+
+    <TextView
+        android:id="@+id/langueText"
+        android:layout_width="411dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="8dp"
+        android:background="#283655"
+        android:gravity="center"
+        android:text="Langue à trouver"
+        android:textColor="#FFE2E1"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerLangue"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/nombreMotsText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/langueText"
+        app:layout_constraintVertical_bias="0.0"></Spinner>
+
+    <TextView
+        android:id="@+id/nombreMotsText"
+        android:layout_width="411dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="288dp"
+        android:background="#283655"
+        android:gravity="center"
+        android:text="Nombre de mots de la partie"
+        android:textAlignment="center"
+        android:textColor="#FFE2E1"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerWordCount"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreMotsText"></Spinner>
+
+    <Button
+        android:id="@+id/LancezPartie"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:height="5dp"
+        android:background="@drawable/mybouton"
+        android:elegantTextHeight="false"
+        android:maxHeight="10dp"
+        android:minHeight="10dp"
+        android:text="Let's start !"
+        android:textColor="#FFE2E1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerWordCount" />
+
+
+</android.support.constraint.ConstraintLayout>

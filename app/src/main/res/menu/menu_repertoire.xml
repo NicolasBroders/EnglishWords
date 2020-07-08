@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/GiftMenu"
+        android:icon="@drawable/baseline_thumb_up_white_18dp"
+        android:title="Nous soutenir"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/AddWordMenu"
+        android:icon="@drawable/baseline_add_white_18dp"
+        android:title="Ajouter un mot"
+        app:showAsAction="always" />
+</menu>

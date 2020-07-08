@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="theme_array">
+        <item>Mirai Attack</item>
+        <item>Article2</item>
+        <item>Article3</item>
+        <item>Article5</item>
+        <item>Mot de liaison</item>
+        <item>Verbes importants</item>
+    </string-array>
+
+    <string-array name="langue_array">
+        <item>Anglais → Français</item>
+        <item>Français → Anglais</item>
+    </string-array>
+
+    <string-array name="WordCount_array">
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+    </string-array>
+
+    <string-array name="Trier_par">
+        <item>Nom</item>
+        <item>Score</item>
+    </string-array>
+
+    <string-array name="Ordre">
+        <item>Croissant</item>
+        <item>Décroissant</item>
+    </string-array>
+    <string-array name="colors">#ffffff</string-array>
+</resources>
