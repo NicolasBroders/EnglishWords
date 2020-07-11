@@ -10,7 +10,10 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,7 +31,6 @@ public class Question extends AppCompatActivity {
     private TextView theme_questions;
     private TextView question;
     private EditText editTextreponse;
-    private Button confirmer;
     private String theme;
     private int motRestant;
     private boolean firstStrike = true;
@@ -43,7 +45,8 @@ public class Question extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.question );
+        setContentView( R.layout.question_other_version );
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         myDb = new DataBaseHelper(this);
         editTextreponse = findViewById( R.id.reponse_questions );
         final Intent intent = getIntent();
@@ -56,9 +59,9 @@ public class Question extends AppCompatActivity {
         final int i = rand.nextInt( BoiteAQuestion.tailleDeLaBoite());
         motRestant =  intent.getIntExtra( "wordCount",10 );
         if(motRestant == 1){
-            theme_questions.setText(theme+"\n Il reste 1 mot ");
+            theme_questions.setText("Thème\n"+theme+"\n Il reste 1 mot ");
         }else{
-            theme_questions.setText(theme+"\n Il reste "+motRestant+" mots");
+            theme_questions.setText("Thème\n"+theme+"\n Il reste "+motRestant+" mots");
         }
         String motADeviner;
         final List<String> reponse = new ArrayList<>();
@@ -91,65 +94,66 @@ public class Question extends AppCompatActivity {
             BoiteAQuestion.BoiteAQuestion(motsFr,motsEn,contextes);
         }
         question.setText(motADeviner);
-        confirmer = findViewById(R.id.confirmer);
 
-        confirmer.setOnClickListener(new View.OnClickListener() {
 
-            @SuppressLint("NewApi")
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            public void onClick(View v) {
-                boolean trouve = false;
-                if(editTextreponse.getText().toString().length() > 0){
-                    if(stripAccents(reponse).contains(stripAccents(editTextreponse.getText().toString()) )){
-                        trouve = true;
+        editTextreponse.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId,
+                                          KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_GO) {
+                    boolean trouve = false;
+                    if(editTextreponse.getText().toString().length() > 0){
+                        if(stripAccents(reponse).contains(stripAccents(editTextreponse.getText().toString()) )){
+                            trouve = true;
+                        }
+
+                        if(trouve){
+                            if(!aide){
+                                editTextreponse.setBackgroundColor( Color.GREEN);
+                                String res = reponse.toString().replace(", ", ",").replaceAll("[\\[.\\]]", "");
+                                myDb.upScore(res,choixLangue);
+                            }
+                            motRestant --;
+                            if(firstStrike){
+                                scoreFirstStrike ++;
+                            }else{
+                                found++;
+                            }
+                            if(motRestant == 0){
+                                Intent intent3 = new Intent( Question.this,EndGame.class );
+                                intent3.putExtra( "scoreFirstStrike",scoreFirstStrike );
+                                intent3.putExtra( "found",found );
+                                intent3.putExtra( "scoreError",totalError );
+                                startActivity( intent3 );
+                                finish();
+                            }else {
+                                Intent intent2 = new Intent( Question.this, Question.class );
+                                intent2.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
+                                intent2.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                intent2.putExtra( "theme_questions", theme );
+                                intent2.putExtra( "choixLangue",choixLangue );
+                                intent2.putExtra( "wordCount", motRestant );
+                                startActivity( intent2 );
+                                finish();
+                            }
+                        }else{
+                            if(firstStrike){
+                                firstStrike = false;
+                            }
+                            totalError ++;
+                            if(aide=((totalError%3)==0)){
+                                editTextreponse.setBackgroundColor( Color.YELLOW);
+                                editTextreponse.setText(reponse.get(0));
+
+                            }else{
+                                editTextreponse.setBackgroundColor(Color.rgb( 255,136,128 ));
+                            }
+
+                        }
                     }
 
-                    if(trouve){
-                        if(!aide){
-                            editTextreponse.setBackgroundColor( Color.GREEN);
-                            String res = reponse.toString().replace(", ", ",").replaceAll("[\\[.\\]]", "");
-                            myDb.upScore(res,choixLangue);
-                        }
-                        motRestant --;
-                        if(firstStrike){
-                            scoreFirstStrike ++;
-                        }else{
-                            found++;
-                        }
-                        if(motRestant == 0){
-                            Intent intent3 = new Intent( Question.this,EndGame.class );
-                            intent3.putExtra( "scoreFirstStrike",scoreFirstStrike );
-                            intent3.putExtra( "found",found );
-                            intent3.putExtra( "scoreError",totalError );
-                            startActivity( intent3 );
-                            finish();
-                        }else {
-                            Intent intent2 = new Intent( Question.this, Question.class );
-                            intent2.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
-                            intent2.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            intent2.putExtra( "theme_questions", theme );
-                            intent2.putExtra( "choixLangue",choixLangue );
-                            intent2.putExtra( "wordCount", motRestant );
-                            startActivity( intent2 );
-                            finish();
-                        }
-                    }else{
-                        if(firstStrike){
-                            firstStrike = false;
-                        }
-                        totalError ++;
-                        if(aide=((totalError%3)==0)){
-                            editTextreponse.setBackgroundColor( Color.YELLOW);
-                            editTextreponse.setText(reponse.get(0));
-
-                        }else{
-                            editTextreponse.setBackgroundColor(Color.rgb( 255,136,128 ));
-                        }
-
-                    }
+                    return true;
                 }
-
-
+                return false;
             }
         });
 
