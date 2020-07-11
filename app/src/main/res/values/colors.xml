@@ -3,6 +3,6 @@
     <color name="colorPrimary">#3a886d</color>
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#00ff4081</color>
-    <color name="my_spinner_text_color">#fff</color>
+    <color name="my_spinner_text_color">#808080</color>
 
 </resources>

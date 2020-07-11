@@ -35,7 +35,12 @@
         android:elegantTextHeight="true"
         android:hint="Traduisez ici"
         android:inputType="text"
+        android:shadowColor="#FFE2E1"
         android:textAlignment="center"
+        android:textColor="#FFE2E1"
+        android:textColorHighlight="#FFE2E1"
+        android:textColorHint="#FFE2E1"
+        android:textColorLink="#FFE2E1"
         android:textSize="50sp" />
 
     <Button
