@@ -11,4 +11,6 @@
     <string name="Prev">Previous</string>
     <string name="vous_cherchez_un_mot">Vous cherchez un mot ?</string>
     <string name="title_activity_ajouter_theme">AjouterTheme</string>
+    <string name="end_game_text">Partie terminée !</string>
+    <string name="continuer">Continuer</string>
 </resources>

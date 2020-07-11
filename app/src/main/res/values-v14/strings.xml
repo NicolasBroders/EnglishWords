@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="end_game_text">Partie terminée !</string>
+    <string name="continuer">Continuer</string>
+</resources>
