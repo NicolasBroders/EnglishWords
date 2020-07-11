@@ -31,7 +31,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@android:drawable/btn_dropdown"
-        android:entries="@mipmap/english_words72"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/langueText"
         app:layout_constraintEnd_toEndOf="parent"
