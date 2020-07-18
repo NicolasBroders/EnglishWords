@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/home">
+
+    <activity
+        android:id="@+id/home"
+        android:name="edu.example.broders.englishwords.home.Home"
+        tools:layout="@layout/home"
+        android:label="Home">
+        <action
+            android:id="@+id/action_home_to_quizz_settings"
+            app:destination="@id/quizzSetting"
+            app:launchSingleTop="true" />
+        />
+        <action
+            android:id="@+id/action_home_to_traducteur"
+            app:destination="@id/traducteur"
+            app:launchSingleTop="true" />
+        />
+        <action
+            android:id="@+id/action_home_to_quizz"
+            app:destination="@id/mesQuizz"
+            app:launchSingleTop="true" />
+        />
+        <action
+            android:id="@+id/action_home_to_repertoire"
+            app:destination="@id/repertoire"
+            app:launchSingleTop="true" />
+        />
+    </activity>
+
+    <activity
+        android:id="@+id/repertoire"
+        android:name="edu.example.broders.englishwords.Repertoire"
+        tools:layout="@layout/activity_repertoire"
+        android:label="Repertoire">
+        <action
+            android:id="@+id/action_repertoire_to_add_word"
+            app:destination="@id/ajouterUnMot"
+            app:launchSingleTop="true" />
+        />
+        <action
+            android:id="@+id/action_repertoire_to_update_word"
+            app:destination="@id/modifierMot"
+            app:launchSingleTop="true" />
+        />
+    </activity>
+
+    <activity
+        android:id="@+id/traducteur"
+        android:name="edu.example.broders.englishwords.Traducteur"
+        android:label="activity_traducteur"
+        tools:layout="@layout/activity_traducteur">
+
+        <action
+            android:id="@+id/action_traducteur_to_add_word"
+            app:destination="@id/ajouterUnMot"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+
+    <activity
+        android:id="@+id/question"
+        android:name="edu.example.broders.englishwords.Question"
+        tools:layout="@layout/question_other_version"
+        android:label="Question">
+        <action
+            android:id="@+id/action_game_to_end_game"
+            app:destination="@id/endGame"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+
+    <activity
+        android:id="@+id/endGame"
+        android:name="edu.example.broders.englishwords.EndGame"
+        tools:layout="@layout/activity_end_game"
+        android:label="EndGame">
+        <action
+            android:id="@+id/action_end_game_to_home"
+            app:destination="@id/home"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+
+
+    <activity
+        android:id="@+id/mesQuizz"
+        android:name="edu.example.broders.englishwords.MesQuizz"
+        tools:layout="@layout/activity_mes_quizz"
+        android:label="MesQuizz" >
+        <action
+            android:id="@+id/action_quizz_list_to_add_quizz"
+            app:destination="@id/ajouterQuizz"
+            app:launchSingleTop="true" />
+        />
+        <action
+            android:id="@+id/action_quizz_list_to_update_quizz"
+            app:destination="@id/modifierQuizz"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+    <activity
+        android:id="@+id/ajouterQuizz"
+        android:name="edu.example.broders.englishwords.AjouterQuizz"
+        android:label="activity_ajouter_quizz"
+        tools:layout="@layout/activity_ajouter_quizz">
+        <action
+            android:id="@+id/action_quizz_add_to_quizz_list"
+            app:destination="@id/mesQuizz"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+    <activity
+        android:id="@+id/ajouterUnMot"
+        android:name="edu.example.broders.englishwords.AjouterUnMot"
+        android:label="activity_ajouter_un_mot"
+        tools:layout="@layout/activity_ajouter_un_mot" >
+        <action
+            android:id="@+id/action_word_add_to_words_list"
+            app:destination="@id/repertoire"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+    <activity
+        android:id="@+id/modifierMot"
+        android:name="edu.example.broders.englishwords.ModifierMot"
+        android:label="activity_modifier_mot"
+        tools:layout="@layout/activity_modifier_mot" >
+        <action
+            android:id="@+id/action_word_update_to_words_list"
+            app:destination="@id/repertoire"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+    <activity
+        android:id="@+id/modifierQuizz"
+        android:name="edu.example.broders.englishwords.ModifierQuizz"
+        android:label="activity_modifier_quizz"
+        tools:layout="@layout/activity_modifier_quizz" >
+        <action
+            android:id="@+id/action_quizz_update_to_quizz_list"
+            app:destination="@id/mesQuizz"
+            app:launchSingleTop="true" />
+        />
+
+    </activity>
+
+    <activity
+        android:id="@+id/quizzSetting"
+        android:name="edu.example.broders.englishwords.QuizzSetting"
+        android:label="QuizzSetting"
+        tools:layout="@layout/quizz_setting_activity" >
+        <action
+            android:id="@+id/action_quizz_setting_to_game"
+            app:destination="@id/question"
+            app:launchSingleTop="true" />
+        />
+    </activity>
+</navigation>

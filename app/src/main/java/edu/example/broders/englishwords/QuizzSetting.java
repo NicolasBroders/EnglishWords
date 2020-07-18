@@ -3,7 +3,7 @@ package edu.example.broders.englishwords;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import utils.DataBaseHelper;
 
-public class test extends AppCompatActivity {
+public class QuizzSetting extends AppCompatActivity {
 
     private Button start;
     private int motRestant;
@@ -25,7 +25,7 @@ public class test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gridlayout);
+        setContentView(R.layout.quizz_setting_activity);
         final Spinner spinnerLangue = findViewById( R.id.spinnerLangue );
         ArrayAdapter<CharSequence> adapterLangue = ArrayAdapter.createFromResource( this,
                 R.array.langue_array, android.R.layout.simple_spinner_item);
@@ -38,7 +38,7 @@ public class test extends AppCompatActivity {
         List<String> listVocab = new ArrayList<String>();
         Cursor resul = myDb.getAllQUIZZs();
         if(resul.getCount()==0){
-            Toast.makeText(test.this, "Pas de thème créé !", Toast.LENGTH_LONG).show();
+            Toast.makeText(QuizzSetting.this, "Pas de thème créé !", Toast.LENGTH_LONG).show();
         }else {
             while (resul.moveToNext()) {
                 listVocab.add(resul.getString(1));
@@ -66,14 +66,14 @@ public class test extends AppCompatActivity {
 
                 jouable = !(myDb.isQuizzEmpty(myDb.getIdQUIZZ(spinnerQuizz.getSelectedItem().toString())));
                 if(!jouable) {
-                    Toast.makeText(test.this, "Ce quizz ne contient aucun mot", Toast.LENGTH_LONG).show();
+                    Toast.makeText(QuizzSetting.this, "Ce quizz ne contient aucun mot", Toast.LENGTH_LONG).show();
                 }else{
                     Cursor res = myDb.getAllWordsOfTheQUIZZ(spinnerQuizz.getSelectedItem().toString());
                     List<String> motsFr = new ArrayList<>();
                     List<String> motsEn = new ArrayList<>();
                     List<String> contextes = new ArrayList<>();
                     if(res.getCount()==0){
-                        Toast.makeText(test.this, "Pas de mot trouvé pour ce quizz !", Toast.LENGTH_LONG).show();
+                        Toast.makeText(QuizzSetting.this, "Pas de mot trouvé pour ce quizz !", Toast.LENGTH_LONG).show();
                     }else {
                         while (res.moveToNext()) {
                             motsFr.add(res.getString(1));
@@ -83,7 +83,7 @@ public class test extends AppCompatActivity {
                     }
                     BoiteAQuestion.BoiteAQuestion(motsFr,motsEn,contextes);
                     motRestant = Integer.parseInt(spinnerWordCount.getSelectedItem().toString());
-                    Intent intent = new Intent(test.this,Question.class);
+                    Intent intent = new Intent(QuizzSetting.this,Question.class);
                     intent.putExtra( "theme_questions",spinnerQuizz.getSelectedItem().toString() );
                     intent.putExtra( "wordCount" ,motRestant);
                     intent.putExtra( "choixLangue",spinnerLangue.getSelectedItem().toString() );

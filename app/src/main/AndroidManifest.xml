@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
 
     package="edu.example.broders.englishwords">
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,14 +12,14 @@
         android:roundIcon="@mipmap/english_words72"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".Home" android:screenOrientation="portrait">
+        <activity android:name=".home.Home" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".test" android:screenOrientation="portrait"
+            android:name=".QuizzSetting" android:screenOrientation="portrait"
             android:label="Paramètres de la partie" />
         <activity
             android:name=".Repertoire" android:screenOrientation="portrait"

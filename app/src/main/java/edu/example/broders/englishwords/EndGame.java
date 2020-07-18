@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import edu.example.broders.englishwords.home.Home;
+
 public class EndGame extends Activity {
 
     private TextView firstStrikeScore;
