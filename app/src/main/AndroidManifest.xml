@@ -12,15 +12,12 @@
         android:roundIcon="@mipmap/english_words72"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".home.Home" android:screenOrientation="portrait">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".QuizzSetting" android:screenOrientation="portrait"
-            android:label="Paramètres de la partie" />
         <activity
             android:name=".Repertoire" android:screenOrientation="portrait"
             android:label="Répertoire"

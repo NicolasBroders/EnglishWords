@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import edu.example.broders.englishwords.home.Home;
+import edu.example.broders.englishwords.home.HomeFragment;
 
 public class EndGame extends Activity {
 
@@ -43,7 +43,7 @@ public class EndGame extends Activity {
                 Question.scoreFirstStrike = 0 ;
                 Question.totalError = 0;
                 Question.found = 0;
-                Intent intent = new Intent(EndGame.this, Home.class);
+                Intent intent = new Intent(EndGame.this, HomeFragment.class);
                 intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();

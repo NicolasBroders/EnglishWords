@@ -1,76 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    android:clickable="true"
-    android:focusableInTouchMode="true"
-    tools:context=".AjouterQuizz">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="355dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:text="Créez un quizz afin de pouvoir y ajouter le vocabulaire sur lequel vous voulez être évalué"
-        android:textColor="#FFE2E1"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".AjouterQuizz">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="111dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="8dp"
-        android:text="QUIZZ"
-        android:textColor="#FFE2E1"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="355dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:text="Créez un quizz afin de pouvoir y ajouter le vocabulaire sur lequel vous voulez être évalué"
+            android:textColor="#FFE2E1"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <EditText
-        android:id="@+id/editQuizz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:hint="Exemple : Cinema"
-        android:inputType="textPersonName"
-        android:shadowColor="#FFE2E1"
-        android:textColor="#FFE2E1"
-        android:textColorHighlight="#FFE2E1"
-        android:textColorHint="#FFE2E1"
-        android:textColorLink="#FFE2E1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.043" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="111dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="8dp"
+            android:text="QUIZZ"
+            android:textColor="#FFE2E1"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonValiderAddQuizz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/mybouton"
-        android:text="Ajouter"
-        android:textColor="#FFE2E1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.043" />
+        <EditText
+            android:id="@+id/editQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:hint="Exemple : Cinema"
+            android:inputType="textPersonName"
+            android:shadowColor="#FFE2E1"
+            android:textColor="#FFE2E1"
+            android:textColorHighlight="#FFE2E1"
+            android:textColorHint="#FFE2E1"
+            android:textColorLink="#FFE2E1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.195"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.043" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/buttonValiderAddQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/mybouton"
+            android:text="Ajouter"
+            android:textColor="#FFE2E1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.043" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

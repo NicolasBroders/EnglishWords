@@ -1,13 +1,14 @@
-package edu.example.broders.englishwords.home
+package edu.example.broders.englishwords.quizz_settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import java.lang.IllegalArgumentException
 
-class HomeViewModelFactory() : ViewModelProvider.Factory {
+class QuizzSettingsViewModelFactory : ViewModelProvider.Factory {
+
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-            return HomeViewModel() as T
+        if (modelClass.isAssignableFrom(QuizzSettingsViewModel::class.java)) {
+            return QuizzSettingsViewModel() as T
         }
         throw IllegalArgumentException("Unknow ViewModel class")
     }

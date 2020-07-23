@@ -25,7 +25,7 @@ public class QuizzSetting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.quizz_setting_activity);
+        setContentView(R.layout.quizz_setting_fragment);
         final Spinner spinnerLangue = findViewById( R.id.spinnerLangue );
         ArrayAdapter<CharSequence> adapterLangue = ArrayAdapter.createFromResource( this,
                 R.array.langue_array, android.R.layout.simple_spinner_item);

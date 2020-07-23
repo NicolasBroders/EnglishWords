@@ -1,12 +1,11 @@
-package edu.example.broders.englishwords.home
+package edu.example.broders.englishwords.quizz_settings
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel() : ViewModel(){
-
+class QuizzSettingsViewModel() : ViewModel(){
     private val _eventQuizzSetting = MutableLiveData<Boolean>()
 
     val eventQuizzSetting : LiveData<Boolean>
