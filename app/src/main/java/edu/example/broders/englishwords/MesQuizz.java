@@ -64,7 +64,7 @@ public class MesQuizz extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_mes_quizz );
+        setContentView( R.layout.quizz_list_fragment);
         myDb = new DataBaseHelper(this);
         generateQuizzByName();
         SpinnerOrdre = findViewById(R.id.spinnerOrdre);

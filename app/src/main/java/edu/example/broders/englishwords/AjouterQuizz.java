@@ -19,7 +19,7 @@ public class AjouterQuizz extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajouter_quizz);
+        setContentView(R.layout.add_quizz_fragment);
         creerQUIZZ = findViewById(R.id.buttonValiderAddQuizz);
         editTextQUIZZ = findViewById(R.id.editQuizz);
         editTextQUIZZ.setOnFocusChangeListener(new View.OnFocusChangeListener() {

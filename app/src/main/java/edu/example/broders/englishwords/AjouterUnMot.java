@@ -31,7 +31,7 @@ public class AjouterUnMot extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajouter_un_mot);
+        setContentView(R.layout.add_word_fragment);
         final Intent intent = getIntent();
         if(intent.hasExtra("MotAnglais")){
             motAnglaisFromTrad = intent.getStringExtra( "MotAnglais" ).toString();

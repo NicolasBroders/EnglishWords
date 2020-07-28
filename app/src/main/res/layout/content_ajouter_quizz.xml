@@ -8,7 +8,7 @@
     android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".AjouterQuizz"
-    tools:showIn="@layout/activity_ajouter_quizz">
+    tools:showIn="@layout/add_quizz_fragment">
 
     <TextView
         android:id="@+id/textView"

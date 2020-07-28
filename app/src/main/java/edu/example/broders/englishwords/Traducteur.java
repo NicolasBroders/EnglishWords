@@ -29,7 +29,7 @@ public class Traducteur extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_traducteur);
+        setContentView(R.layout.traductor_fragment);
         motATraduire = (TextView) findViewById(R.id.textViewMotATrad);
         textViewTraduction = (TextView) findViewById(R.id.textViewTraduc2);
         traduction = (TextView) findViewById(R.id.traduction);
@@ -111,7 +111,7 @@ public class Traducteur extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        setContentView(R.layout.activity_traducteur);
+        setContentView(R.layout.traductor_fragment);
         motATraduire = findViewById(R.id.textViewMotATrad);
         textViewTraduction = findViewById(R.id.textViewTraduc2);
         traduction = findViewById(R.id.traduction);

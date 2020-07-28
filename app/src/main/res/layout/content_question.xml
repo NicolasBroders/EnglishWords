@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.niko3.helloandroid.edu.example.niko3.helloandroid.Question"
-    tools:showIn="@layout/question">
+    tools:showIn="@layout/quizz_game_fragment">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

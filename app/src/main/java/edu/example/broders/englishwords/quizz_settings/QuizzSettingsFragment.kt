@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import edu.example.broders.englishwords.R
+import edu.example.broders.englishwords.database.RepertoireDatabase
+import edu.example.broders.englishwords.database.RepertoireDatabaseDao
 import edu.example.broders.englishwords.databinding.QuizzSettingFragmentBinding
 
 
@@ -26,7 +28,11 @@ class QuizzSettingsFragment: Fragment() {
                 false
         )
 
-        viewModelFactory = QuizzSettingsViewModelFactory()
+        val application = requireNotNull(this.activity).application
+
+        val dataSource = RepertoireDatabase.getInstance(application).repertoireDatabaseDao
+
+        viewModelFactory = QuizzSettingsViewModelFactory(dataSource,application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(QuizzSettingsViewModel::class.java)
 
         binding.quizzSettingsViewModel = viewModel

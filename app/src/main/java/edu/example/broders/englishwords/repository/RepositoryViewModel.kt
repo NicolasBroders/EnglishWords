@@ -1,13 +1,12 @@
-package edu.example.broders.englishwords.quizz_settings
+package edu.example.broders.englishwords.repository
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import edu.example.broders.englishwords.database.RepertoireDatabaseDao
+import androidx.lifecycle.ViewModel
 
-class QuizzSettingsViewModel(val database: RepertoireDatabaseDao, application: Application) : AndroidViewModel(application){
+class RepositoryViewModel() : ViewModel(){
+
     private val _eventQuizzSetting = MutableLiveData<Boolean>()
 
     val eventQuizzSetting : LiveData<Boolean>

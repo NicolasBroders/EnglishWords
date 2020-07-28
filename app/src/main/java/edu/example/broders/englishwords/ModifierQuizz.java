@@ -23,7 +23,7 @@ public class ModifierQuizz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modifier_quizz);
+        setContentView(R.layout.update_quizz_fragment);
         final Intent intent = getIntent();
         ancienQuizz = intent.getStringExtra( "ancienNomQuizz" ).toString();
         buttonModifierQuizz = findViewById( R.id.buttonValiderModifierQuizz );

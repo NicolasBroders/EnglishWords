@@ -21,7 +21,7 @@ public class EndGame extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_end_game );
+        setContentView( R.layout.end_game_fragment);
         Intent intent = getIntent();
         firstStrikeScore = findViewById( R.id.scoreFirstStrike);
         errorScore = findViewById( R.id.scoreError );

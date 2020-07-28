@@ -14,6 +14,18 @@
             android:id="@+id/action_home_to_quizz_settings"
             app:destination="@id/quizz_settings_navigation"
             app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_home_to_quizz_list"
+            app:destination="@id/quizz_list_navigation"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_home_to_repository"
+            app:destination="@id/repository_navigation"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_home_to_traductor"
+            app:destination="@id/traductor_navigation"
+            app:launchSingleTop="true" />
     </fragment>
 
     <fragment
@@ -25,7 +37,132 @@
             android:id="@+id/action_quizz_settings_to_home"
             app:destination="@id/home_navigation"
             app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_quizz_settings_to_quizz_game"
+            app:destination="@id/quizz_game_navigation"
+            app:launchSingleTop="true" />
     </fragment>
+
+    <fragment
+        android:id="@+id/quizz_game_navigation"
+        android:name="edu.example.broders.englishwords.quizzgame.QuizzGameFragment"
+        tools:layout="@layout/quizz_game_fragment"
+        android:label="Question">
+        <action
+            android:id="@+id/action_quizz_game_to_end_game"
+            app:destination="@id/endgame_navigation"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_quizz_game_to_quizz_game"
+            app:destination="@id/quizz_game_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/endgame_navigation"
+        android:name="edu.example.broders.englishwords.endgame.EndGameFragment"
+        tools:layout="@layout/end_game_fragment"
+        android:label="EndGame">
+        <action
+            android:id="@+id/action_end_game_to_home"
+            app:destination="@id/home_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizz_list_navigation"
+        android:name="edu.example.broders.englishwords.quizzlist.QuizzListFragment"
+        tools:layout="@layout/quizz_list_fragment"
+        android:label="QuizzList">
+        <action
+            android:id="@+id/action_quizz_list_to_add_quizz"
+            app:destination="@id/add_quizz_navigation"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_quizz_list_to_update_quizz"
+            app:destination="@id/update_quizz_navigation"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_quizz_list_to_home"
+            app:destination="@id/home_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_quizz_navigation"
+        android:name="edu.example.broders.englishwords.addquizz.AddQuizzFragment"
+        tools:layout="@layout/add_quizz_fragment"
+        android:label="AddQuizz">
+        <action
+            android:id="@+id/action_add_quizz_to_quizz_list"
+            app:destination="@id/quizz_list_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/update_quizz_navigation"
+        android:name="edu.example.broders.englishwords.updatequizz.UpdateQuizzFragment"
+        tools:layout="@layout/update_quizz_fragment"
+        android:label="UpdateQuizz">
+        <action
+            android:id="@+id/action_update_quizz_to_quizz_list"
+            app:destination="@id/quizz_list_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/repository_navigation"
+        android:name="edu.example.broders.englishwords.repository.RepositoryFragment"
+        tools:layout="@layout/repository_fragment"
+        android:label="Repository">
+        <action
+            android:id="@+id/action_repository_to_add_word"
+            app:destination="@id/add_word_navigation"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_repository_to_update_word"
+            app:destination="@id/update_word_navigation"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_repository_to_home"
+            app:destination="@id/home_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_word_navigation"
+        android:name="edu.example.broders.englishwords.addword.AddWordFragment"
+        tools:layout="@layout/add_word_fragment"
+        android:label="AddWord">
+        <action
+            android:id="@+id/action_add_word_to_word_list"
+            app:destination="@id/repository_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/update_word_navigation"
+        android:name="edu.example.broders.englishwords.updateword.UpdateWordFragment"
+        tools:layout="@layout/update_word_fragment"
+        android:label="UpdateWord">
+        <action
+            android:id="@+id/action_update_word_to_word_list"
+            app:destination="@id/repository_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/traductor_navigation"
+        android:name="edu.example.broders.englishwords.traductor.TraductorFragment"
+        tools:layout="@layout/traductor_fragment"
+        android:label="Traductor">
+        <action
+            android:id="@+id/action_traductor_to_home"
+            app:destination="@id/home_navigation"
+            app:launchSingleTop="true" />
+    </fragment>
+
 
 
 </navigation>

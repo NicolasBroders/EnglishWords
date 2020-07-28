@@ -31,7 +31,7 @@ public class ModifierMot extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modifier_mot);
+        setContentView(R.layout.update_word_fragment);
         final Intent intent = getIntent();
         ancienMotAnglais = intent.getStringExtra( "ancienMotAnglais" ).toString();
         ancienMotFrançais = intent.getStringExtra( "ancienMotFrançais" ).toString();

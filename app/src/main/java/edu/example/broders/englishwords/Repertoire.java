@@ -71,7 +71,7 @@ public class Repertoire extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_repertoire );
+        setContentView( R.layout.repository_fragment);
         myDb = new DataBaseHelper(this);
         generateDataByName();
         SpinnerTrierPar = findViewById(R.id.spinnerTrierPar);
