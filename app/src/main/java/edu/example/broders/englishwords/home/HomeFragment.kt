@@ -41,6 +41,30 @@ class HomeFragment : Fragment() {
             }
         })
 
+        viewModel.eventQuizzList.observe(viewLifecycleOwner, Observer { goToQuizzList ->
+            if(goToQuizzList){
+
+                findNavController().navigate(HomeFragmentDirections.actionHomeToQuizzList())
+                viewModel.onAccessToQuizzListComplete()
+            }
+        })
+
+        viewModel.eventTraductor.observe(viewLifecycleOwner, Observer { goToTraductor ->
+            if(goToTraductor){
+
+                findNavController().navigate(HomeFragmentDirections.actionHomeToTraductor())
+                viewModel.onAccessToTraductorComplete()
+            }
+        })
+
+        viewModel.eventRepository.observe(viewLifecycleOwner, Observer { goToRepository ->
+            if(goToRepository){
+
+                findNavController().navigate(HomeFragmentDirections.actionHomeToRepository())
+                viewModel.onAccessToRepositoryComplete()
+            }
+        })
+
         return binding.root
     }
 }
