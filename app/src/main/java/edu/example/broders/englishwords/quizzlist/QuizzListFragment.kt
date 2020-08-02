@@ -10,20 +10,21 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import edu.example.broders.englishwords.R
+import edu.example.broders.englishwords.databinding.QuizzListFragmentAltBinding
 import edu.example.broders.englishwords.databinding.QuizzListFragmentBinding
 
 class QuizzListFragment : Fragment() {
 
     private lateinit var viewModel: QuizzListViewModel
     private lateinit var viewModelFactory: QuizzListModelFactory
-    private lateinit var binding: QuizzListFragmentBinding
+    private lateinit var binding: QuizzListFragmentAltBinding
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(
                 inflater,
-                R.layout.quizz_list_fragment,
+                R.layout.quizz_list_fragment_alt,
                 container,
                 false
         )
@@ -31,8 +32,13 @@ class QuizzListFragment : Fragment() {
         viewModelFactory = QuizzListModelFactory()
         viewModel = ViewModelProvider(this, viewModelFactory).get(QuizzListViewModel::class.java)
 
-        binding.quizzListViewModel = viewModel
+        val adapter = QuizzAdapter()
         binding.setLifecycleOwner(this)
+        binding.wordList.adapter = adapter
+
+        viewModel.quizz.observe(viewLifecycleOwner, Observer {
+            adapter.data = it
+        })
 
         viewModel.eventQuizzSetting.observe(viewLifecycleOwner, Observer { goToQuizzSetting ->
             if(goToQuizzSetting){
